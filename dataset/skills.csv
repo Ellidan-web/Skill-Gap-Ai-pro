@@ -1,0 +1,66 @@
+skill,category,proficiency
+Python,Programming Language,Advanced
+JavaScript,Programming Language,Advanced
+Java,Programming Language,Advanced
+C++,Programming Language,Intermediate
+C#,Programming Language,Intermediate
+Go,Programming Language,Advanced
+Ruby,Programming Language,Intermediate
+PHP,Programming Language,Intermediate
+Rust,Programming Language,Advanced
+Swift,Programming Language,Intermediate
+Kotlin,Programming Language,Intermediate
+TypeScript,Programming Language,Advanced
+Dart,Programming Language,Intermediate
+SQL,Database,Advanced
+PostgreSQL,Database,Advanced
+MySQL,Database,Advanced
+MongoDB,Database,Intermediate
+Redis,Database,Advanced
+Elasticsearch,Database,Intermediate
+Firebase,Database,Intermediate
+Django,Framework,Advanced
+Flask,Framework,Advanced
+FastAPI,Framework,Advanced
+Spring Boot,Framework,Advanced
+Node.js,Framework,Advanced
+Express,Framework,Advanced
+React,Framework,Advanced
+Vue,Framework,Advanced
+Angular,Framework,Advanced
+Laravel,Framework,Intermediate
+Symfony,Framework,Intermediate
+Ruby on Rails,Framework,Advanced
+ASP.NET,Framework,Intermediate
+React Native,Framework,Advanced
+Flutter,Framework,Advanced
+TensorFlow,ML/DL,Advanced
+PyTorch,ML/DL,Advanced
+Scikit-learn,ML/DL,Advanced
+Pandas,Data Science,Advanced
+NumPy,Data Science,Advanced
+OpenCV,ML/DL,Intermediate
+NLTK,ML/DL,Intermediate
+Docker,DevOps,Advanced
+Kubernetes,DevOps,Advanced
+AWS,DevOps,Advanced
+Azure,DevOps,Advanced
+GCP,DevOps,Advanced
+Linux,DevOps,Advanced
+Git,DevOps,Advanced
+Jenkins,DevOps,Advanced
+Ansible,DevOps,Intermediate
+Terraform,DevOps,Advanced
+Prometheus,DevOps,Intermediate
+Grafana,DevOps,Intermediate
+NGINX,DevOps,Advanced
+REST APIs,Development,Advanced
+GraphQL,Development,Advanced
+Microservices,Development,Advanced
+CI/CD,Development,Advanced
+HTML,Frontend,Intermediate
+CSS,Frontend,Intermediate
+Agile,Management,Intermediate
+Scrum,Management,Intermediate
+JIRA,Management,Intermediate
+Confluence,Management,Intermediate
