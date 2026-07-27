@@ -179,18 +179,23 @@ class MLEngine:
     
     def calculate_match_percentage(self, resume_skills: List[str], job_skills: List[str]) -> Dict:
         """Calculate match percentage between resume skills and job requirements."""
+        from config import SKILL_SYNONYMS
+        
         # Clean and normalize resume skills
         resume_skills_lower = []
         for s in resume_skills:
             if s and s.strip():
-                # Remove common noise and clean
                 cleaned = s.lower().strip()
-                # Remove trailing punctuation like .,;:
                 cleaned = cleaned.rstrip('.,;:')
-                # Remove quotes
                 cleaned = cleaned.strip('"\'')
                 if cleaned and len(cleaned) > 1:
-                    resume_skills_lower.append(cleaned)
+                    # Check if this skill has a normalized version
+                    normalized = cleaned
+                    for normalized_skill, variations in SKILL_SYNONYMS.items():
+                        if cleaned in variations or cleaned == normalized_skill:
+                            normalized = normalized_skill
+                            break
+                    resume_skills_lower.append(normalized)
         
         # Clean and normalize job skills
         job_skills_lower = []
@@ -199,7 +204,13 @@ class MLEngine:
                 cleaned = s.lower().strip()
                 cleaned = cleaned.strip('"\'')
                 if cleaned:
-                    job_skills_lower.append(cleaned)
+                    # Check if this skill has a normalized version
+                    normalized = cleaned
+                    for normalized_skill, variations in SKILL_SYNONYMS.items():
+                        if cleaned in variations or cleaned == normalized_skill:
+                            normalized = normalized_skill
+                            break
+                    job_skills_lower.append(normalized)
         
         # Debug prints
         print(f"Resume skills (cleaned): {resume_skills_lower}")
