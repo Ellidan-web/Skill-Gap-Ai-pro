@@ -179,51 +179,51 @@ class ResumeParser:
         
         return '\n'.join(experience_lines[:100])  # Limit to prevent too much text
     
-def _extract_skills(self, text: str) -> List[str]:
-    """Extract skills from text using keyword matching."""
-    from config import SKILL_SYNONYMS
-    text_lower = text.lower()
-    found_skills = set()
-    
-    # Build skill mapping: skill_name -> normalized_skill
-    skill_to_normalized = {}
-    for normalized_skill, variations in SKILL_SYNONYMS.items():
-        skill_to_normalized[normalized_skill] = normalized_skill
-        for variation in variations:
-            skill_to_normalized[variation] = normalized_skill
-    
-    # Check for skills in text
-    for category, skills in self.skill_patterns.items():
-        for skill in skills:
-            pattern = r'\b' + re.escape(skill) + r'\b'
-            if re.search(pattern, text_lower):
-                # Check if this skill has a normalized version
-                normalized = skill_to_normalized.get(skill.lower(), skill)
-                found_skills.add(normalized)
-    
-    # Check for skill variations from synonyms
-    for normalized_skill, variations in SKILL_SYNONYMS.items():
-        for variation in variations:
-            if re.search(r'\b' + re.escape(variation) + r'\b', text_lower):
-                found_skills.add(normalized_skill)
-    
-    # Extract additional skills from common patterns
-    skill_section_patterns = [
-        r'(?:skills|technologies|tools|tech stack)[:]\s*([^\n]+)',
-        r'(?:skills|technologies|tools|tech stack)\s+([^\n]+)',
-    ]
-    
-    for pattern in skill_section_patterns:
-        matches = re.findall(pattern, text_lower, re.IGNORECASE)
-        for match in matches:
-            # Split by common delimiters
-            skills = re.split(r'[,;|]|\s+and\s+|\s*•\s*', match)
+    def _extract_skills(self, text: str) -> List[str]:
+        """Extract skills from text using keyword matching."""
+        from config import SKILL_SYNONYMS
+        text_lower = text.lower()
+        found_skills = set()
+        
+        # Build skill mapping: skill_name -> normalized_skill
+        skill_to_normalized = {}
+        for normalized_skill, variations in SKILL_SYNONYMS.items():
+            skill_to_normalized[normalized_skill] = normalized_skill
+            for variation in variations:
+                skill_to_normalized[variation] = normalized_skill
+        
+        # Check for skills in text
+        for category, skills in self.skill_patterns.items():
             for skill in skills:
-                skill = skill.strip()
-                if skill and len(skill) > 2:
-                    found_skills.add(skill.lower())
-    
-    return sorted(list(found_skills))
+                pattern = r'\b' + re.escape(skill) + r'\b'
+                if re.search(pattern, text_lower):
+                    # Check if this skill has a normalized version
+                    normalized = skill_to_normalized.get(skill.lower(), skill)
+                    found_skills.add(normalized)
+        
+        # Check for skill variations from synonyms
+        for normalized_skill, variations in SKILL_SYNONYMS.items():
+            for variation in variations:
+                if re.search(r'\b' + re.escape(variation) + r'\b', text_lower):
+                    found_skills.add(normalized_skill)
+        
+        # Extract additional skills from common patterns
+        skill_section_patterns = [
+            r'(?:skills|technologies|tools|tech stack)[:]\s*([^\n]+)',
+            r'(?:skills|technologies|tools|tech stack)\s+([^\n]+)',
+        ]
+        
+        for pattern in skill_section_patterns:
+            matches = re.findall(pattern, text_lower, re.IGNORECASE)
+            for match in matches:
+                # Split by common delimiters
+                skills = re.split(r'[,;|]|\s+and\s+|\s*•\s*', match)
+                for skill in skills:
+                    skill = skill.strip()
+                    if skill and len(skill) > 2:
+                        found_skills.add(skill.lower())
+        
+        return sorted(list(found_skills))
 
 def validate_file(file_data: bytes, filename: str) -> Tuple[bool, str]:
     """Validate uploaded file."""
