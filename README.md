@@ -25,33 +25,35 @@ SkillGap AI Pro is a Flask-based web application that helps job seekers evaluate
 ![Report PDF](static/screenshots/skillgap-pdf2.JPG)
 
 
-## 5. Tech Stack
+## Tech Stack
 
-### Frontend
-- HTML5, CSS3, and Vanilla JavaScript
-- Chart.js for data visualizations
-- Font Awesome and Google Fonts (Poppins)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
-### Backend
-- Python 3.13 and Flask 2.3.3
-- Flask-SQLAlchemy 3.1.1 for ORM
-- Flask-CORS and python-dotenv
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![ReportLab](https://img.shields.io/badge/ReportLab-PDF-red?style=for-the-badge)
 
-### Machine Learning
-- Pandas and NumPy for data processing
-- Scikit-learn for TF-IDF and cosine similarity
-- Regex for skill extraction
+## What I Learned
 
-### Database
-- SQLite for development and MySQL for production
-- SQLAlchemy 2.0.21
+Building SkillGap AI Pro strengthened my understanding of:
 
-### Resume Parsing
-- pdfplumber, python-docx, and python-magic-bin
-
-### Reports
-- ReportLab 4.0.7 for PDF generation
+- Developing full-stack web applications with Flask and SQLAlchemy
+- Processing and analyzing resume data using Python
+- Implementing TF-IDF and cosine similarity for job matching
+- Designing and integrating relational databases
+- Generating PDF reports with ReportLab
+- Building responsive interfaces with HTML, CSS, and JavaScript
+- Writing clean, maintainable, and scalable code
 
 ## Installation
 1. Clone the repository
